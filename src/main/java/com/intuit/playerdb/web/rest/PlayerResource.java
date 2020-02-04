@@ -42,7 +42,7 @@ public class PlayerResource {
      */
     @GetMapping("/players/{playerID}")
     @Timed
-    public ResponseEntity<PlayerDTO> getTweet(@PathVariable Long playerID) {
+    public ResponseEntity<PlayerDTO> getPlayerById(@PathVariable Long playerID) {
         log.debug("REST request to get Player : {}", playerID);
         Player player = playerRepository.findByPlayerId(playerID);
         PlayerDTO PlayerDTO = playerMapper.toDto(player);

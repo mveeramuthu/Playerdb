@@ -12,69 +12,36 @@ import java.util.Objects;
  */
 public class PlayerDTO implements Serializable {
 
-    private Long id;
+    private Long playerID;
 
     @NotNull
-    @Size(max = 140)
-    private String tweetText;
+    private String nameFirst;
 
     @NotNull
-    private ZonedDateTime createdAt;
+    private String nameLast;
 
-    @NotNull
-    @Size(max = 5)
-    private String lang;
-
-    private Long createdById;
-
-    private String createdByScreenname;
-
-    public Long getId() {
-        return id;
+    public Long getPlayerID() {
+        return playerID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPlayerID(Long playerID) {
+        this.playerID = playerID;
     }
 
-    public String getTweetText() {
-        return tweetText;
+    public String getNameFirst() {
+        return nameFirst;
     }
 
-    public void setTweetText(String tweetText) {
-        this.tweetText = tweetText;
+    public void setNameFirst(String nameFirst) {
+        this.nameFirst = nameFirst;
     }
 
-    public ZonedDateTime getCreatedAt() {
-        return createdAt;
+    public String getNameLast() {
+        return nameLast;
     }
 
-    public void setCreatedAt(ZonedDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getLang() {
-        return lang;
-    }
-
-    public void setLang(String lang) {
-        this.lang = lang;
-    }
-
-    public Long getCreatedById() {
-        return createdById;
-    }
-
-    public void setCreatedById(Long tweetAuthorId) {
-        this.createdById = tweetAuthorId;
-    }
-
-    public String getCreatedByScreenname() {
-        return createdByScreenname;
-    }
-
-    public void setCreatedByScreenname(String tweetAuthorScreenname) {
-        this.createdByScreenname = tweetAuthorScreenname;
+    public void setNameLast(String nameLast) {
+        this.nameLast = nameLast;
     }
 
     @Override
@@ -87,24 +54,23 @@ public class PlayerDTO implements Serializable {
         }
 
         PlayerDTO PlayerDTO = (PlayerDTO) o;
-        if(PlayerDTO.getId() == null || getId() == null) {
+        if(PlayerDTO.getPlayerID() == null || getPlayerID() == null) {
             return false;
         }
-        return Objects.equals(getId(), PlayerDTO.getId());
+        return Objects.equals(getPlayerID(), PlayerDTO.getPlayerID());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(getId());
+        return Objects.hashCode(getPlayerID());
     }
 
     @Override
     public String toString() {
         return "PlayerDTO{" +
-            "id=" + getId() +
-            ", tweetText='" + getTweetText() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", lang='" + getLang() + "'" +
+            "playerId=" + getPlayerID() +
+            ", name_first='" + getNameFirst() + "'" +
+            ", name_last='" + getNameLast() + "'" +
             "}";
     }
 }
