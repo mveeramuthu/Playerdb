@@ -13,7 +13,7 @@ public interface PlayerMapper extends EntityMapper <PlayerDTO, Player> {
     PlayerDTO toDto(Player player);
     Player toEntity(PlayerDTO PlayerDTO);
 
-    default Player fromPlayerId(Long playerId) {
+    default Player fromPlayerId(String playerId) {
         if (playerId == null) {
             return null;
         }

@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class PlayerDTO implements Serializable {
 
-    private Long playerID;
+    private String playerID;
 
     @NotNull
     private String nameFirst;
@@ -20,11 +20,11 @@ public class PlayerDTO implements Serializable {
     @NotNull
     private String nameLast;
 
-    public Long getPlayerID() {
+    public String getPlayerID() {
         return playerID;
     }
 
-    public void setPlayerID(Long playerID) {
+    public void setPlayerID(String playerID) {
         this.playerID = playerID;
     }
 

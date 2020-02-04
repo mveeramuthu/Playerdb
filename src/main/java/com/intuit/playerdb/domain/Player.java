@@ -31,7 +31,7 @@ public class Player implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long playerID;
+    private String playerID;
 
     @NotNull
     @Column(name = "name_first", nullable = false)
@@ -41,11 +41,11 @@ public class Player implements Serializable {
     @Column(name = "name_last", nullable = false)
     private String nameLast;
 
-    public Long getPlayerID() {
+    public String getPlayerID() {
         return playerID;
     }
 
-    public void setPlayerID(Long playerID) {
+    public void setPlayerID(String playerID) {
         this.playerID = playerID;
     }
 
