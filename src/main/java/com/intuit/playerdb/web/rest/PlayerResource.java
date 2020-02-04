@@ -44,7 +44,7 @@ public class PlayerResource {
     @Timed
     public ResponseEntity<PlayerDTO> getPlayerById(@PathVariable Long playerID) {
         log.debug("REST request to get Player : {}", playerID);
-        Player player = playerRepository.findByPlayerId(playerID);
+        Player player = playerRepository.findById(playerID);
         PlayerDTO PlayerDTO = playerMapper.toDto(player);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(PlayerDTO));
     }

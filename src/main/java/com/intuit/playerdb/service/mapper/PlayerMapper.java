@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 /**
- * Mapper for the entity Tweet and its DTO PlayerDTO.
+ * Mapper for the entity Player and its DTO PlayerDTO.
  */
 @Mapper(componentModel = "spring", uses = {})
 public interface PlayerMapper extends EntityMapper <PlayerDTO, Player> {
