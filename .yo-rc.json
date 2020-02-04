@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.intuit.playerdb"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "gateway",
+    "baseName": "Playerdb",
+    "packageName": "com.intuit.playerdb",
+    "packageFolder": "com/intuit/playerdb",
+    "serverPort": "8090",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjdjNmY4NGQ2NGE4ZmYyYjQ0ZDlhMzY4OWZhNTc4YTgwMDU4OTVjOGY0MzRlZmIzMTQ1YWQzNmEyMzQxMDM0NWZiODk5ZWY5MTVhZGY0NjVjMzY0MmYxM2MzODM5YTQ0MzUyZmU4OWU2M2I2MTQ1YWVmYWUxZGM1NTQzYmE0MGU=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1580839852379,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
