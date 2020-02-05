@@ -64,4 +64,4 @@ The json representation of a player should be the following, where each field na
 
 ## Demo
 
-[![Watch demo video](https://gifs.com/gif/mohan-craft-demo-jZVq4z)](https://youtu.be/MK9tvO1ONYk)
+[![Watch demo video](https://j.gifs.com/jZVq4z.gif)](https://youtu.be/MK9tvO1ONYk)
