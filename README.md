@@ -41,3 +41,21 @@ The json representation of a player should be the following, where each field na
     ...
 }
 ```
+
+## Steps to run the app
+
+- First build a docker image of your app by running:
+
+  ./mvnw -Pprod verify jib:dockerBuild
+
+- Then run the below command to bring up mongodb database, consul registry and the app in different docker containers
+
+  docker-compose -f src/main/docker/app.yml up -d
+
+- Go to localhost:8090 in your browser
+
+- Click on Account -> Login (on top right of the page) and enter `admin` as username & also as password to login
+
+- Click on Administration -> API and scroll down to `player-resource` section where you can execute `/api/players` and `​/api​/players​/{playerID}` endpoints
+
+## Demo
