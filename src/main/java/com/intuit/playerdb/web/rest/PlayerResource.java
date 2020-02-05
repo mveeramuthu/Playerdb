@@ -48,4 +48,20 @@ public class PlayerResource {
         PlayerDTO playerDTO = playerMapper.toDto(player);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(playerDTO));
     }
+
+    /**
+     * GET  /players : get all the players.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of players in body
+     */
+    @GetMapping("/players")
+    @Timed
+    public ResponseEntity<List<PlayerDTO>> getAllPlayers(@ApiParam Pageable pageable) {
+        log.debug("REST request to get a page of Players");
+        Page<Player> page = playerRepository.findAll(pageable);
+
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(UriComponentsBuilder.fromPath("/api/players"), page);
+        return new ResponseEntity<>(playerMapper.toDto(page.getContent()), headers, HttpStatus.OK);
+    }
 }
