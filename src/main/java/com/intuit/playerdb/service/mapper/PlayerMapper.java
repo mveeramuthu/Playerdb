@@ -10,15 +10,18 @@ import org.mapstruct.Mapping;
  */
 @Mapper(componentModel = "spring", uses = {})
 public interface PlayerMapper extends EntityMapper <PlayerDTO, Player> {
+
     PlayerDTO toDto(Player player);
+
+    @Mapping(source = "playerID", target = "playerID")
     Player toEntity(PlayerDTO PlayerDTO);
 
-    default Player fromPlayerId(String playerId) {
-        if (playerId == null) {
+    default Player fromPlayerID(String playerID) {
+        if (playerID == null) {
             return null;
         }
         Player player = new Player();
-        player.setPlayerID(playerId);
+        player.setPlayerID(playerID);
         return player;
     }
 }

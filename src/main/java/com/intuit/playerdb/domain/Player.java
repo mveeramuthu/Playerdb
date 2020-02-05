@@ -24,13 +24,12 @@ import java.util.Objects;
  */
 @ApiModel(description = "Player entity")
 @Entity
-@Table(name = "player")
+@org.springframework.data.mongodb.core.mapping.Document(collection = "Player")
 public class Player implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String playerID;
 
     @NotNull
@@ -88,7 +87,7 @@ public class Player implements Serializable {
     @Override
     public String toString() {
         return "Player{" +
-            "playerId=" + getPlayerID() +
+            "playerID=" + getPlayerID() +
             ", name_first='" + getNameFirst() + "'" +
             ", name_last='" + getNameLast() + "'" +
             "}";

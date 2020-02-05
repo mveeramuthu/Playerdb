@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * Spring Data MongoDB repository for the {@link Player} entity.
  */
 @Repository
-public interface PlayerRepository extends MongoRepository<PlayerRepository, PlayerMapper> {
-    Player findById(String playerId);
+public interface PlayerRepository extends MongoRepository<Player, String> {
+    Player findByPlayerID(String playerID);
 }

@@ -68,7 +68,7 @@ public class PlayerDTO implements Serializable {
     @Override
     public String toString() {
         return "PlayerDTO{" +
-            "playerId=" + getPlayerID() +
+            "playerID=" + getPlayerID() +
             ", name_first='" + getNameFirst() + "'" +
             ", name_last='" + getNameLast() + "'" +
             "}";
