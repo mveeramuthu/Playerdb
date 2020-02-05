@@ -2,6 +2,8 @@ package com.intuit.playerdb.domain;
 
 import io.swagger.annotations.ApiModel;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -24,20 +26,19 @@ import java.util.Objects;
  */
 @ApiModel(description = "Player entity")
 @Entity
-@org.springframework.data.mongodb.core.mapping.Document(collection = "Player")
+@Document(collection = "Player")
 public class Player implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
     private String playerID;
 
     @NotNull
-    @Column(name = "name_first", nullable = false)
+    @Field("nameFirst")
     private String nameFirst;
 
     @NotNull
-    @Column(name = "name_last", nullable = false)
+    @Field("nameLast")
     private String nameLast;
 
     public String getPlayerID() {

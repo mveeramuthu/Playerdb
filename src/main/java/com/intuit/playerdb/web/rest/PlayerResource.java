@@ -44,13 +44,8 @@ public class PlayerResource {
     @Timed
     public ResponseEntity<PlayerDTO> getPlayerByPlayerID(@PathVariable String playerID) {
         log.debug("REST request to get Player : {}", playerID);
-
         Player player = playerRepository.findByPlayerID(playerID);
-        System.out.println("player:" + player);
-
         PlayerDTO playerDTO = playerMapper.toDto(player);
-        System.out.println("playerDTO:" + playerDTO);
-
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(playerDTO));
     }
 }
