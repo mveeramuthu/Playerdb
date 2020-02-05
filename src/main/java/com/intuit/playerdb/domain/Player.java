@@ -1,7 +1,6 @@
 package com.intuit.playerdb.domain;
 
 import io.swagger.annotations.ApiModel;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -9,20 +8,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.time.ZonedDateTime;
 import java.util.Objects;
 
 
 /**
  * Player entity
- * <p>
- * playerID,birthYear,birthMonth,birthDay,birthCountry,birthState,birthCity,deathYear,deathMonth,deathDay,deathCountry,deathState,deathCity,nameFirst,nameLast,nameGiven,weight,height,bats,throws,debut,finalGame,retroID,bbrefID
- * <p>
- * <p>
- * aardsda01,1981,12,27,USA,CO,Denver,,,,,,,David,Aardsma,David Allan,215,75,R,R,2004-04-06,2015-08-23,aardd001,aardsda01
- * aaronha01,1934,2,5,USA,AL,Mobile,,,,,,,Hank,Aaron,Henry Louis,180,72,R,R,1954-04-13,1976-10-03,aaroh101,aaronha01
- * aaronto01,1939,8,5,USA,AL,Mobile,1984,8,16,USA,GA,Atlanta,Tommie,Aaron,Tommie Lee,190,75,R,R,1962-04-10,1971-09-26,aarot101,aaronto01
- * aasedo01,1954,9,8,USA,CA,Orange,,,,,,,Don,Aase,Donald William,190,75,R,R,1977-07-26,1990-10-03,aased001,aasedo01
  */
 @ApiModel(description = "Player entity")
 @Entity
@@ -31,15 +21,34 @@ public class Player implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @NotNull
     private String playerID;
-
-    @NotNull
-    @Field("nameFirst")
+    private Long birthYear;
+    private Long birthMonth;
+    private Long birthDay;
+    private String birthCountry;
+    private String birthState;
+    private String birthCity;
+    private Long deathYear;
+    private Long deathMonth;
+    private Long deathDay;
+    private String deathCountry;
+    private String deathState;
+    private String deathCity;
     private String nameFirst;
-
-    @NotNull
-    @Field("nameLast")
     private String nameLast;
+    private String nameGiven;
+    private Long weight;
+    private Long height;
+    @Size(max = 1)
+    private String bats;
+    @Size(max = 1)
+    @Field("throws")
+    private String playerThrows;
+    private String debut;
+    private String finalGame;
+    private String retroID;
+    private String bbrefID;
 
     public String getPlayerID() {
         return playerID;
@@ -63,6 +72,174 @@ public class Player implements Serializable {
 
     public void setNameLast(String nameLast) {
         this.nameLast = nameLast;
+    }
+
+    public Long getBirthYear() {
+        return birthYear;
+    }
+
+    public void setBirthYear(Long birthYear) {
+        this.birthYear = birthYear;
+    }
+
+    public Long getBirthMonth() {
+        return birthMonth;
+    }
+
+    public void setBirthMonth(Long birthMonth) {
+        this.birthMonth = birthMonth;
+    }
+
+    public Long getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(Long birthDay) {
+        this.birthDay = birthDay;
+    }
+
+    public String getBirthCountry() {
+        return birthCountry;
+    }
+
+    public void setBirthCountry(String birthCountry) {
+        this.birthCountry = birthCountry;
+    }
+
+    public String getBirthState() {
+        return birthState;
+    }
+
+    public void setBirthState(String birthState) {
+        this.birthState = birthState;
+    }
+
+    public String getBirthCity() {
+        return birthCity;
+    }
+
+    public void setBirthCity(String birthCity) {
+        this.birthCity = birthCity;
+    }
+
+    public Long getDeathYear() {
+        return deathYear;
+    }
+
+    public void setDeathYear(Long deathYear) {
+        this.deathYear = deathYear;
+    }
+
+    public Long getDeathMonth() {
+        return deathMonth;
+    }
+
+    public void setDeathMonth(Long deathMonth) {
+        this.deathMonth = deathMonth;
+    }
+
+    public Long getDeathDay() {
+        return deathDay;
+    }
+
+    public void setDeathDay(Long deathDay) {
+        this.deathDay = deathDay;
+    }
+
+    public String getDeathCountry() {
+        return deathCountry;
+    }
+
+    public void setDeathCountry(String deathCountry) {
+        this.deathCountry = deathCountry;
+    }
+
+    public String getDeathState() {
+        return deathState;
+    }
+
+    public void setDeathState(String deathState) {
+        this.deathState = deathState;
+    }
+
+    public String getDeathCity() {
+        return deathCity;
+    }
+
+    public void setDeathCity(String deathCity) {
+        this.deathCity = deathCity;
+    }
+
+    public String getNameGiven() {
+        return nameGiven;
+    }
+
+    public void setNameGiven(String nameGiven) {
+        this.nameGiven = nameGiven;
+    }
+
+    public Long getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Long weight) {
+        this.weight = weight;
+    }
+
+    public Long getHeight() {
+        return height;
+    }
+
+    public void setHeight(Long height) {
+        this.height = height;
+    }
+
+    public String getBats() {
+        return bats;
+    }
+
+    public void setBats(String bats) {
+        this.bats = bats;
+    }
+
+    public String getPlayerThrows() {
+        return playerThrows;
+    }
+
+    public void setPlayerThrows(String playerThrows) {
+        this.playerThrows = playerThrows;
+    }
+
+    public String getDebut() {
+        return debut;
+    }
+
+    public void setDebut(String debut) {
+        this.debut = debut;
+    }
+
+    public String getFinalGame() {
+        return finalGame;
+    }
+
+    public void setFinalGame(String finalGame) {
+        this.finalGame = finalGame;
+    }
+
+    public String getRetroID() {
+        return retroID;
+    }
+
+    public void setRetroID(String retroID) {
+        this.retroID = retroID;
+    }
+
+    public String getBbrefID() {
+        return bbrefID;
+    }
+
+    public void setBbrefID(String bbrefID) {
+        this.bbrefID = bbrefID;
     }
 
     @Override
