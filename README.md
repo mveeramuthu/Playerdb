@@ -46,11 +46,15 @@ The json representation of a player should be the following, where each field na
 
 - First build a docker image of your app by running:
 
+```bash
   ./mvnw -Pprod verify jib:dockerBuild
+```
 
 - Then run the below command to bring up mongodb database, consul registry and the app in different docker containers
 
+```bash
   docker-compose -f src/main/docker/app.yml up -d
+```
 
 - Go to localhost:8090 in your browser
 
