@@ -56,7 +56,7 @@ The json representation of a player should be the following, where each field na
   docker-compose -f src/main/docker/app.yml up -d
 ```
 
-- Go to localhost:8090 in your browser
+- Go to [0.0.0.0:8090](0.0.0.0:8090) in your browser
 
 - Click on Account -> Login (on top right of the page) and enter `admin` as username & also as password to login
 
