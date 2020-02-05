@@ -63,3 +63,5 @@ The json representation of a player should be the following, where each field na
 - Click on Administration -> API and scroll down to `player-resource` section where you can execute `/api/players` and `​/api​/players​/{playerID}` endpoints
 
 ## Demo
+
+[![Watch demo video](https://gifs.com/gif/mohan-craft-demo-jZVq4z)](https://youtu.be/MK9tvO1ONYk)
